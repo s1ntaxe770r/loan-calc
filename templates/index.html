@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>loan calculator</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+	<h2 style="text-align:center;">loan calculator</h2>
+	 <div class="form-group">
+	<form method="POST" action="{{ url_for('index')}}" class="form">
+		<h3>intrest type</h3>
+		<select class="form-control" name="intrest-type">
+			<option>flat rate</option>
+			<option>reducing balance</option>
+			<option>compund interest</option>
+		</select>
+		<h3 style="margin:1%;">principal(NGN)</h3>
+		<input  required class="form-control" type="text" name="principal">
+		<h3 style="margin:1%;" >percentage rate(%)</h3>
+		<input  required  class="form-control" type="text" name="percentage">
+		<h3 style="margin:1%;">loan duration(yrs)</h3>
+		<input  required  class="form-control" type="text" name="duration">
+
+		<button class="btn btn-outline-dark" style="margin-left:35%; margin-top:2%;" type="submit">Calculate</button>
+	</form>
+
+</div>
+
+</div>
+
+
+	<section>
+		<div class="container">
+		<h1>results</h1>
+		<input placeholder=" intrest :{{intrest}}" readonly>
+		<input placeholder="monthly principal:{{ monthly_principal}}" readonly>
+
+		<input placeholder=" monthly intrest:{{ monthly_intrest }}" readonly>		
+
+		<input placeholder="total principal : {{ total_principal }}" readonly>	
+
+		<input placeholder="total payment due : {{ total_payment_due }}" readonly>	
+		</div>
+	</section>
+</body>
+</html>
